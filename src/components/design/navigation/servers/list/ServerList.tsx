@@ -1,19 +1,15 @@
-import { Cog } from "@styled-icons/boxicons-solid";
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { Virtuoso } from "react-virtuoso";
 import type { Client, Server } from "revolt.js";
 import type { INotificationChecker } from "revolt.js/dist/util/Unreads";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import { isTouchscreenDevice } from "../../../../../lib";
 import { useLink } from "../../../../../lib/context";
 
 import { useDndComponents, useDragEndCustomReorder } from "../../../../common";
 
-import { Avatar } from "../../../atoms";
-import { Tooltip } from "../../../atoms/indicators/Tooltip";
-import { Item, ItemContainer } from "./Item";
+import { Item } from "./Item";
 import { FooterProps, ListFooter } from "./ListFooter";
 import { ListHeader } from "./ListHeader";
 
@@ -70,11 +66,6 @@ const Base = styled.div`
         width: 0;
         height: 0;
     }
-
-    ${isTouchscreenDevice &&
-    css`
-        padding-bottom: 50px;
-    `}
 `;
 
 const Shadow = styled.div`
@@ -169,17 +160,6 @@ export function ServerList(props: Props & ParentProps & FooterProps) {
             <Shadow>
                 <div />
             </Shadow>
-            <ItemContainer head>
-                <Link to="/settings">
-                    <Tooltip i18n="app.settings.title" div right>
-                        <Avatar
-                            size={42}
-                            fallback={<Cog size={18} />}
-                            interactive
-                        />
-                    </Tooltip>
-                </Link>
-            </ItemContainer>
         </Base>
     );
 }
