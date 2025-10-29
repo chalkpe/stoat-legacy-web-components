@@ -13,7 +13,7 @@ export const Category = styled.div<Props>`
     margin-top: 4px;
     margin-bottom: 4px;
     white-space: nowrap;
-    padding: ${(props) => (props.compact ? "0 4px" : "6px 0 6px 8px")};
+    padding: ${(props) => (props.compact ? "0 4px" : "2px")};
 
     display: flex;
     align-items: center;
