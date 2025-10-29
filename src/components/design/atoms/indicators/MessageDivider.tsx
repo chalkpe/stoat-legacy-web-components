@@ -4,8 +4,9 @@ import styled, { css } from "styled-components";
 const Base = styled.div<{ unread?: boolean }>`
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 0;
-    margin: 17px 12px 5px;
+    margin: 33px 12px 21px;
     border-top: thin solid var(--tertiary-foreground);
     user-select: none;
 
