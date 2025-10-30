@@ -30,7 +30,7 @@ export function Unreads({ unread, count }: Props) {
     }
 
     if (unread) {
-        return <circle cx="27" cy="5" r="5" fill={"white"} />;
+        return <circle cx="27" cy="5" r="5" fill={"var(--error)"} />;
     }
 
     return null;
