@@ -6,8 +6,8 @@ const Base = styled.div<{ unread?: boolean }>`
     align-items: center;
     justify-content: center;
     height: 0;
-    margin: 33px 12px 21px;
-    border-top: thin solid var(--status-invisible);
+    margin: 38px 12px 26px;
+    border-top: 1px solid var(--status-invisible);
     user-select: none;
 
     time {
@@ -18,7 +18,7 @@ const Base = styled.div<{ unread?: boolean }>`
         padding-inline: 5px 5px;
 
         // We set the background to mask the border.
-        color: var(--tertiary-foreground);
+        color: var(--status-invisible);
         background: var(--primary-background);
     }
 
