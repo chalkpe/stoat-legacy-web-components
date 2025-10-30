@@ -7,7 +7,7 @@ const Base = styled.div<{ unread?: boolean }>`
     justify-content: center;
     height: 0;
     margin: 33px 12px 21px;
-    border-top: thin solid var(--tertiary-foreground);
+    border-top: thin solid var(--status-invisible);
     user-select: none;
 
     time {
