@@ -8,7 +8,6 @@ import { Avatar } from "../../../atoms";
 import { Unreads } from "../../../atoms/indicators/Unreads";
 import { Swoosh } from "./Swoosh";
 import { useLink, useTrigger } from "../../../../../lib/context";
-import { Tooltip } from "../../../atoms/indicators/Tooltip";
 import { INotificationChecker } from "revolt.js/dist/util/Unreads";
 
 export const ItemContainer = styled.div<{ head?: boolean }>`
@@ -51,20 +50,18 @@ const Inner = observer(({ item, permit }: InnerProps) => {
     const count = item.getMentions(permit).length;
 
     return (
-        <Tooltip content={item.name} div right>
-            <Trigger id="Menu" data={{ server: item._id, unread }}>
-                <Link to={"/server/" + item._id}>
-                    <Avatar
-                        size={42}
-                        interactive
-                        fallback={item.name}
-                        holepunch={(unread || count > 0) && "top-right"}
-                        overlay={<Unreads unread={unread} count={count} />}
-                        src={item.generateIconURL({ max_side: 256 }, false)}
-                    />
-                </Link>
-            </Trigger>
-        </Tooltip>
+        <Trigger id="Menu" data={{ server: item._id, unread }}>
+            <Link to={"/server/" + item._id}>
+                <Avatar
+                    size={42}
+                    interactive
+                    fallback={item.name}
+                    holepunch={(unread || count > 0) && "top-right"}
+                    overlay={<Unreads unread={unread} count={count} />}
+                    src={item.generateIconURL({ max_side: 256 }, false)}
+                />
+            </Link>
+        </Trigger>
     );
 });
 
