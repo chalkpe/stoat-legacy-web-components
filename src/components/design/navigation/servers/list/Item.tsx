@@ -51,7 +51,7 @@ const Inner = observer(({ item, permit }: InnerProps) => {
 
     return (
         <Trigger id="Menu" data={{ server: item._id, unread }}>
-            <Link to={"/server/" + item._id}>
+            <Link to={item.channel_ids.length === 1 ? `/channel/${item.channel_ids[0]}` : "/server/" + item._id}>
                 <Avatar
                     size={56}
                     interactive
