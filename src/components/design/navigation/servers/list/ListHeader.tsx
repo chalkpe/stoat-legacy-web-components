@@ -27,30 +27,30 @@ const UserItem = observer(({ client, home, active }: Props) => {
     return (
         <Link to={home()}>
             {/* {!active && <SwooshOverlay />} */}
-            <UserTooltip user={client.user!} div right>
-                <Trigger id="Status">
-                    <Avatar
-                        src={client.user!.generateAvatarURL(
-                            {
-                                max_side: 256,
-                            },
-                            false,
-                        )}
-                        size={56}
-                        interactive
-                        holepunch={alertCount ? "right" : "bottom-right"}
-                        overlay={
-                            <>
-                                <Unreads
-                                    count={alertCount}
-                                    unread={alertCount > 0}
-                                />
-                                <UserStatus user={client.user!} />
-                            </>
-                        }
-                    />
-                </Trigger>
-            </UserTooltip>
+            {/* <UserTooltip user={client.user!} div right> */}
+            <Trigger id="Status">
+                <Avatar
+                    src={client.user!.generateAvatarURL(
+                        {
+                            max_side: 256,
+                        },
+                        false,
+                    )}
+                    size={56}
+                    interactive
+                    holepunch={alertCount ? "right" : "bottom-right"}
+                    overlay={
+                        <>
+                            <Unreads
+                                count={alertCount}
+                                unread={alertCount > 0}
+                            />
+                            <UserStatus user={client.user!} />
+                        </>
+                    }
+                />
+            </Trigger>
+            {/* </UserTooltip> */}
         </Link>
     );
 });
