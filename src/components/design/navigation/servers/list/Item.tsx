@@ -53,7 +53,7 @@ const Inner = observer(({ item, permit }: InnerProps) => {
     function handleClick() {
         if (!isOnlyChannel) return;
         const panels = document.querySelector("#app > div > div > div");
-        panels?.scrollTo({ behavior: "smooth", left: panels.clientWidth * 0.3 });
+        panels?.scrollTo({ behavior: "smooth", left: panels.clientWidth });
     }
 
     return (
@@ -61,7 +61,7 @@ const Inner = observer(({ item, permit }: InnerProps) => {
             <Link
                 // @ts-expect-error
                 onClick={handleClick}
-                to={isOnlyChannel ? `/channel/${item.channel_ids[0]}` : "/server/" + item._id}
+                to={isOnlyChannel ? `/server/${item._id}/channel/${item.channel_ids[0]}` : "/server/" + item._id}
             >
                 <Avatar
                     size={56}
