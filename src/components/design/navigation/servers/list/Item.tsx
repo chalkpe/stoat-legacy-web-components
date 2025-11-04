@@ -82,7 +82,7 @@ export function Item({ provided, isDragging, active, ...innerProps }: Props) {
             {...provided.dragHandleProps}
             ref={provided.innerRef}
             style={provided.draggableProps.style}>
-            {active && <SwooshOverlay />}
+            {/* {active && <SwooshOverlay />} */}
             <Inner {...innerProps} />
         </ItemContainer>
     );

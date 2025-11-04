@@ -26,7 +26,7 @@ const UserItem = observer(({ client, home, active }: Props) => {
 
     return (
         <Link to={home()}>
-            {!active && <SwooshOverlay />}
+            {/* {!active && <SwooshOverlay />} */}
             <UserTooltip user={client.user!} div right>
                 <Trigger id="Status">
                     <Avatar
