@@ -53,7 +53,7 @@ type ParentProps = {
 };
 
 const Base = styled.div`
-    width: 56px;
+    width: 70px;
     display: flex;
     flex-direction: column;
 
@@ -137,6 +137,7 @@ export function ServerList(props: Props & ParentProps & FooterProps) {
                                     return (
                                         // @ts-expect-error cope
                                         <Draggable
+                                            isDragDisabled
                                             draggableId={item._id}
                                             index={index - 1}
                                             key={item._id}>

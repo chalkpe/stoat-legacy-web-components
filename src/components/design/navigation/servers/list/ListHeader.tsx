@@ -36,7 +36,7 @@ const UserItem = observer(({ client, home, active }: Props) => {
                             },
                             false,
                         )}
-                        size={42}
+                        size={56}
                         interactive
                         holepunch={alertCount ? "right" : "bottom-right"}
                         overlay={
@@ -79,7 +79,7 @@ const ChannelInner = observer(
                 div
                 right>
                 <Avatar
-                    size={42}
+                    size={56}
                     interactive
                     fallback={channel.name}
                     holepunch={unread && "top-right"}

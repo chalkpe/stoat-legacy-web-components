@@ -25,7 +25,7 @@ export function ListFooter({ createServer, showDiscover }: FooterProps) {
                 <ItemContainer>
                     <Tooltip content="Add a server" div right>
                         <Avatar
-                            size={42}
+                            size={56}
                             fallback={<Plus color="var(--accent)" size={24} />}
                             interactive
                         />
@@ -37,7 +37,7 @@ export function ListFooter({ createServer, showDiscover }: FooterProps) {
                     <ItemContainer>
                         <Tooltip content="Discover Revolt" div right>
                             <Avatar
-                                size={42}
+                                size={56}
                                 fallback={
                                     <Compass color="var(--accent)" size={24} />
                                 }

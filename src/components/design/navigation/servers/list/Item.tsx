@@ -11,7 +11,7 @@ import { useLink, useTrigger } from "../../../../../lib/context";
 import { INotificationChecker } from "revolt.js/dist/util/Unreads";
 
 export const ItemContainer = styled.div<{ head?: boolean }>`
-    width: 56px;
+    width: 70px;
     padding-left: 7px;
     padding-right: 7px;
     padding-bottom: 6px;
@@ -53,7 +53,7 @@ const Inner = observer(({ item, permit }: InnerProps) => {
         <Trigger id="Menu" data={{ server: item._id, unread }}>
             <Link to={"/server/" + item._id}>
                 <Avatar
-                    size={42}
+                    size={56}
                     interactive
                     fallback={item.name}
                     holepunch={(unread || count > 0) && "top-right"}
