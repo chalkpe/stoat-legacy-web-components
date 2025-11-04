@@ -49,9 +49,20 @@ const Inner = observer(({ item, permit }: InnerProps) => {
     const unread = !!item.isUnread(permit);
     const count = item.getMentions(permit).length;
 
+    const isOnlyChannel = item.channel_ids.length === 1;
+    function handleClick() {
+        if (!isOnlyChannel) return;
+        const panels = document.querySelector("#app > div > div > div");
+        panels?.scrollTo({ behavior: "smooth", left: panels.clientWidth * 0.3 });
+    }
+
     return (
         <Trigger id="Menu" data={{ server: item._id, unread }}>
-            <Link to={item.channel_ids.length === 1 ? `/channel/${item.channel_ids[0]}` : "/server/" + item._id}>
+            <Link
+                // @ts-expect-error
+                onClick={handleClick}
+                to={isOnlyChannel ? `/channel/${item.channel_ids[0]}` : "/server/" + item._id}
+            >
                 <Avatar
                     size={56}
                     interactive
