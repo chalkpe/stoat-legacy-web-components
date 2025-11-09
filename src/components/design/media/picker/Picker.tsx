@@ -70,8 +70,7 @@ const Base = styled(Column)`
     right: 10px;
     bottom: 10px;
 
-    // row width + scrollbar + group selector
-    width: calc(${ROW_SIZE} * 40px + 10px + 40px);
+    width: calc(100vw - 20px);
     height: 420px;
 
     max-width: calc(100vw - 20px);
@@ -140,7 +139,7 @@ const EmojiContainer = styled.a`
 
     img {
         width: 16vw;
-        height: 20vw;
+        height: 16vw;
         object-fit: contain;
     }
 `;
