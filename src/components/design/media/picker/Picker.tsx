@@ -123,6 +123,35 @@ const EmojiContainer = styled.a`
     display: grid;
     place-items: center;
 
+    width: 20vw;
+    height: 20vw;
+
+    cursor: pointer;
+    transition: 0.1s ease all;
+    border-radius: var(--border-radius);
+
+    &:hover {
+        background: var(--tertiary-background);
+    }
+
+    &:active {
+        filter: brightness(0.9);
+    }
+
+    img {
+        width: 16vw;
+        height: 20vw;
+        object-fit: contain;
+    }
+`;
+
+/**
+ * Wrapper around individual emojis in the grid
+ */
+const FixedEmojiContainer = styled.a`
+    display: grid;
+    place-items: center;
+
     width: 40px;
     height: 40px;
 
@@ -318,9 +347,9 @@ export function Picker({
             memo(({ category }: { category: Category }) => (
                 <CategoryIcon>
                     {category.emoji ? (
-                        <EmojiContainer>
+                        <FixedEmojiContainer>
                             <Emoji emoji={category.emoji} />
-                        </EmojiContainer>
+                        </FixedEmojiContainer>
                     ) : (
                         <Avatar
                             size={24}
@@ -372,13 +401,13 @@ export function Picker({
                 />
                 <Groups>
                     {activeCategories.map((cat, groupIndex) => (
-                        <EmojiContainer
+                        <FixedEmojiContainer
                             key={cat.id}
                             onClick={() =>
                                 ref.current?.scrollToIndex({ groupIndex })
                             }>
                             <Icon category={cat} />
-                        </EmojiContainer>
+                        </FixedEmojiContainer>
                     ))}
                 </Groups>
             </Parent>
