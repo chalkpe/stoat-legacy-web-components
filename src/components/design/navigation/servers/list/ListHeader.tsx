@@ -103,10 +103,19 @@ const UnreadDMs = observer(({ client, permit }: Props) => {
 
     if (channels.length === 0) return null;
 
+    function handleClick() {
+        const panels = document.querySelector("#app > div > div > div");
+        panels?.scrollTo({ behavior: "smooth", left: panels.clientWidth });
+    }
+
     return (
         <List>
             {channels.map((channel) => (
-                <Link key={channel._id} to={`/channel/${channel._id}`}>
+                <Link
+                    // @ts-expect-error
+                    onClick={handleClick}
+                    key={channel._id}
+                    to={`/channel/${channel._id}`}>
                     <ChannelInner channel={channel} permit={permit} />
                 </Link>
             ))}
